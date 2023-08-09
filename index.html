@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-commerce Template</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <style>
+    /* Custom styles go here */
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Your Logo</a>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav"> <!-- Added 'justify-content-end' class -->
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Checkout</a>
+          </li>
+        </ul>
+        <select id="language-select" class="mr-3"> <!-- Added 'mr-3' class for margin-right -->
+          <option value="en">Anglais</option>
+          <option value="en">Français</option>
+          <option value="en">Espaniol</option>
+          <option value="ar">العربية</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <section id="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3">
+          <!-- Sidebar content goes here -->
+          <h3>Categories</h3>
+          <ul class="list-group">
+            <li class="list-group-item">Category 1</li>
+            <li class="list-group-item">Category 2</li>
+            <li class="list-group-item">Category 3</li>
+          </ul>
+        </div>
+        <div class="col-lg-9">
+          <!-- Main content goes here -->
+          <h2>Featured Products</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="images/product1.jpg" class="card-img-top" alt="Product 1">
+                <div class="card-body">
+                  <h5 class="card-title">T_shirt</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="images/product2.jpg" class="card-img-top" alt="Product 2">
+                <div class="card-body">
+                  <h5 class="card-title">Product 2</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="product3.jpg" class="card-img-top" alt="Product 3">
+                <div class="card-body">
+                  <h5 class="card-title">Product 3</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                  <a href="#" class="btn btn-primary">Add to Cart</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <!-- Footer content goes here -->
+          <p>&copy; 2023 Your Company. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    $(document).ready(function() {
+      $('#language-select').change(function() {
+        var selectedLanguage = $(this).val();
+        if (selectedLanguage === 'ar') {
+        $('body').attr('dir', 'rtl');
+      } else {
+        $('body').removeAttr('dir');
+      }
+      });
+    });
+ // Retrieve the selected language from local storage
+ var selectedLanguage = localStorage.getItem('selectedLanguage');
+    // Use the selected language to set the language of the page
+    if (selectedLanguage === 'en') {
+      document.documentElement.lang = 'en';
+    } else if (selectedLanguage === 'fr') {
+      document.documentElement.lang = 'fr';
+    } else if (selectedLanguage === 'es') {
+      document.documentElement.lang = 'es';
+    } else if (selectedLanguage === 'ar') {
+      document.documentElement.lang = 'ar';
+    }
+
+  </script>
+  
+ 
+</body>
+
+</html>
